@@ -10,10 +10,6 @@
 <br>
 <h2 align="center"><code>Contents</code></h2>
 
-</div>
-<br>
-<h2 align="center"><code>Contents</code></h2>
-
 ## Türkçe
 Bu çalışma, yazılım geliştirme süreçlerindeki manuel testin sınırlamalarını aşmayı hedefleyen bir çalışmadır. Geliştirilen Yazılımların Kaynak Kodlarını Otomatik Olarak Test Eden Test Aracı, yazılım test ekiplerine kaynak kodları üzerinde otomatik test senaryoları oluşturma ve uygulama imkanı sunarak verimliliği artırmayı amaçlamaktadır.
 
