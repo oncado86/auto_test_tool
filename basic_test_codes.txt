@@ -1,0 +1,1179 @@
+Test Simple Python Code
+
+#1
+def get_bigger(a, b) -> str:
+    """iki sayıyı kıyaslar"""
+    deneme=1
+    if a<b:
+        deneme=11
+        if a < 5:
+            return " a < 5"
+        return "a < b"
+    elif a==b:
+        return "a = b"
+
+    else:
+        return "a > b"
+
+
+    """
+    TODO: .....
+
+    """
+
+#2
+def get_student_statement(score):
+    """Öğrencinin ortamlamasının harf notunu hesaplar."""
+    if 100>=score and score >= 95:
+        return "AA"
+    elif 95> score and score >=90:
+        return "BB"
+    elif 90 > score and  score >=80:
+        return "BC"
+    elif 80 > score and score >=70:
+        return "CC"
+    elif 70  > score and score >=60:
+        return "DC"
+    elif 60  > score and score >=50:
+        return "DD"
+    elif 50 > score and score >=0:
+        return "FF"
+    else:
+        return "invalid score"
+
+
+
+
+#3
+def mukemmelsayi_mi(sayi):
+    """May the Force be with us."""
+    the_force= "This is The Way"
+
+    sayac = 0
+
+    for i in range(1, sayi):
+        if sayi % i == 0:
+            sayac += i
+    if sayac == sayi:
+        return True
+    else:
+        return False
+
+#4
+def asal_mi(sayi):
+    """May the Force be with us."""
+    the_force= "This is The Way"
+
+    asl = True
+    bolen=0
+
+    if sayi < 2 or sayi % 2 == 0:
+        return "asal değil"
+
+    for i in range(1, sayi+1):
+        if sayi % i == 0:
+            bolen+=1
+        if bolen>2:
+            asl = False
+            break
+
+    if asl:
+        return "asal sayı"
+    else:
+        return "asal sayı değil"
+
+
+#5
+def asal_sayi(sayi):
+    """May the Force be with us."""
+    the_force= "This is The Way"
+    sayac = 0
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            sayac += 1
+            break
+    if sayac == 0 and sayi>1:
+        print("Girilen sayı asaldır")
+    else:
+        print("Girilen sayı asal değildir")
+
+
+#6
+def faktoriyel(sayi):
+    if sayi>=0:
+        fakto =1
+        for i in range(sayi):
+            fakto*=i
+        return fakto
+    else:
+        print("sayı pozitif olmalıdır")
+
+#7
+def ekrana_yazdir(sayi):
+    if sayi<=0:
+        return "pozitif sayı giriniz"
+
+    else:
+        sayac = 1
+        while True:
+            print(sayac)
+            sayac+=1
+            if sayac > sayi:
+                break
+
+
+#8
+def topla(sayi1, sayi2):
+    if type(sayi1) != str and type(sayi2) != str:
+        return sayi1 + sayi2
+
+#9
+def karekok(sayi):
+    if type(sayi) != str and sayi>0:
+        return sayi ** 0.5
+    elif type(sayi) != str and sayi<0:
+        print("pozitif sayı giriniz")
+
+
+#10
+def amstrong_num(num):
+    # Changed num variable to string,
+    # and calculated the length (number of digits)
+    order = len(str(num))
+
+    # initialize sum
+    sum = 0
+
+    # find the sum of the cube of each digit
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+
+    # display the result
+    if num == sum:
+        print(num,"is an Armstrong number")
+    else:
+        print(num,"is not an Armstrong number")
+
+
+#11
+def fibonacci(nterms):
+    # first two terms
+    n1, n2 = 0, 1
+    count = 0
+
+    # check if the number of terms is valid
+    if nterms <= 0 or type(nterms)!=int:
+        print("Please enter a positive integer")
+    # generate fibonacci sequence
+    else:
+        print("Fibonacci sequence:")
+        while count < nterms:
+            print(n1)
+            nth = n1 + n2
+            # update values
+            n1 = n2
+            n2 = nth
+            count += 1
+
+
+#12
+def ten_times_table(num):
+    if type(num) !=str:
+        for i in range(1, 11):
+            print(f"{num} x {i} = {num*i}")
+
+#13
+def prime_numbers_between_two_numbers(lower,upper):
+
+    if type(lower) != int or type(upper) != int:
+        print("tam sayılar giriniz")
+
+    elif lower<1 or upper <1:
+        print("pozitif tam sayılar giriniz")
+
+    else:
+
+        print("Prime numbers between", lower, "and", upper, "are:")
+
+        for num in range(lower, upper + 1):
+            # all prime numbers are greater than 1
+            if num > 1:
+                for i in range(2, num):
+                    if (num % i) == 0:
+                        break
+                else:
+                    print(num)
+
+#14
+# This function computes the factor of the argument passed
+def print_factors(x):
+    if x<0:
+        print("take a positive number")
+    elif type(x) != int:
+        print("take a integer number")
+    else:
+        print("The factors of",x,"are:")
+        for i in range(1, x + 1):
+            if x % i == 0:
+                print(i)
+
+
+
+#15
+# Python Program to Print V Numbers Pattern
+def print_v_parttern_numbers(rows):
+    if type(rows) == int and 1000>rows>0:
+        print("====The V Numbers Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(1, i + 1):
+                print(j, end = '')
+            for k in range(1, 2 * (rows - i) + 1):
+                print(end = ' ')
+            for l in range(i, 0, -1):
+                print(l, end = '')
+        print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+
+#16
+# Python Program to Print Square Pattern of Left Shift Numbers
+def print_square_parrern_numbers(rows):
+    if type(rows) == int and 1000>rows>0:
+        print("====The Square Pattern of Left Shift Numbers====")
+
+        for i in range(1, rows + 1):
+            for j in range(i, rows + 1):
+                print(j, end = ' ')
+            for k in range(1, i):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+
+
+#17
+# Python Program to Print Square Numbers in Sine Wave Pattern
+def print_square_numbers_sine_wave_pattern(rows):
+    if type(rows) == int and 1000>rows>0:
+        print("==The Square Pattern of Numbers in Sine Wave Pattern==")
+
+        for i in range(rows):
+            for j in range(rows):
+                if j % 2 == 0:
+                    print((rows * j) + i + 1, end = ' ')
+                else:
+                    print(rows * (j + 1) - i, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+
+#18
+# Python Program to Print Left Arrow Numbers Pattern
+def print_left_arrow_numbers_pattern(rows):
+    if type(rows) == int and 1000>rows>0:
+        print("====The Left Arrow Numbers Pattern====")
+
+        for i in range(rows, 0, -1):
+            for j in range(i, 0, -1):
+                print(j, end = ' ')
+            print()
+
+        for i in range(2, rows + 1):
+            for j in range(i, 0, -1):
+                print(j, end = ' ')
+        print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+#19
+# Python Program to Print Right Arrow Number Pattern
+def print_right_arrow_number_pattern(rows):
+    if type(rows) == int and 1000>rows>0:
+
+        print("====Right Arrow Number Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(1, rows + 1):
+                if j < i:
+                    print(end = '  ')
+                else:
+                    print(j, end = ' ')
+            print()
+
+        for i in range(1, rows):
+            for j in range(1, rows + 1):
+                if j < rows - i:
+                    print(end = '  ')
+                else:
+                    print(j, end = ' ')
+            print()
+
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+#20
+# Python Program to Print Right Triangle of Fibonacci Series Numbers Pattern
+def print_right_triangle_of_fibonacci_series(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Right Angled Triangle of Fibonacci Series Numbers Pattern====")
+
+        for i in range(1, rows + 1):
+            First_Value = 0
+            Second_Value = 1
+            for j in range(1, i + 1):
+                Next = First_Value + Second_Value
+                print(Next, end = ' ')
+                First_Value = Second_Value
+                Second_Value = Next
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+#21
+# Python Program to Print Right Pascals Triangle of Mirrored Numbers Pattern
+def print_right_pascals_triangle_of_mirrored_numbers(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Right Pascals Mirrored Numbers Triangle Pattern====")
+
+        for i in range(rows, 0, -1):
+            for j in range(i, rows + 1):
+                print(j, end = ' ')
+            for k in range(rows - 1, i - 1, -1):
+                print(k, end = ' ')
+            print()
+
+        for i in range(2, rows + 1):
+            for j in range(i, rows + 1):
+                print(j, end = ' ')
+            for k in range(rows - 1, i - 1, -1):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+#22
+# Python Program to Print Right Pascals Number Triangle
+def print_right_pascals_number_triangle(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Right Pascals Number Triangle Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(1, i + 1):
+                print(j, end = ' ')
+            print()
+
+        for i in range(rows - 1, 0, -1):
+            for j in range(1, i + 1):
+                print(j, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+#23
+#Python Program to Print Pascal Triangle
+def print_pascal_triangle(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        from math import factorial
+        print("====Pascals Triangle Number Pattern====")
+
+        for i in range(0, rows):
+            for j in range(rows - i + 1):
+                print(end = ' ')
+            for k in range(0, i + 1):
+                print(factorial(i)//(factorial(k) * factorial(i - k)), end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+#24
+# Python Program to Print Left Pascals Number Triangle
+def print_left_pascals_number_triangle(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Left Pascals Number Triangle Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(i, rows):
+                print(end = '  ')
+            for k in range(1, i + 1):
+                print(k, end = ' ')
+            print()
+
+        for i in range(rows, 0, -1):
+            for j in range(i, rows + 1):
+                print(end = '  ')
+            for k in range(1, i):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#25
+# Python Program to Print Inverted Triangle Numbers Pattern
+def print_inverted_triangle_numbers(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Inverted Triangle Numbers Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(1, i):
+                print(end = ' ')
+            for k in range(1, rows - i + 2):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+#26
+# Python Program to Print Triangle of Mirrored Numbers Pattern
+def print_triangle_of_mirrored(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Triangle of Mirrored Numbers Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(rows, i, -1):
+                print(end = ' ')
+            for k in range(1, i + 1):
+                print(k, end = '')
+            for l in range(i - 1, 0, -1):
+                print(l, end = '')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+#27
+# Python Program to Print Diamond Number Pattern
+def print_diamond_number(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Diamond Number Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(1, rows - i + 1):
+                print(end = ' ')
+            for k in range(1, (2 * i)):
+                print(k, end = '')
+            print()
+
+        for i in range(rows - 1, 0, -1):
+            for j in range(1, (rows - i + 1)):
+                print(end = ' ')
+            for k in range(1, (2 * i)):
+                print(k, end = '')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+
+#28
+# Python Program to Print a Simple Number Pattern
+def print_simple_number(rows):
+    # max row edge
+    if rows >7:
+        return
+    if type(rows)==int and rows>0:
+        print("====Printing Simple Number Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(1, i + 1):
+                print(j, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#29
+# Python program to Print Sandglass Number Pattern
+def print_sandglass_number(rows):
+    # max row edge
+    if rows >13:
+        return
+    if type(rows)==int and rows>0:
+        print("====Sandglass Number Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(1, i):
+                print(end = ' ')
+            for k in range(i, rows + 1):
+                print(k, end = ' ')
+            print()
+
+        for i in range(rows - 1, 0, -1):
+            for j in range(1, i):
+                print(end = ' ')
+            for k in range(i, rows + 1):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#30
+# Python Program to Print Triangle Numbers Pattern
+def print_triangle_number(rows):
+    # max row edge
+    if rows >31:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Triangle Numbers Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(rows, i, -1):
+                print(end = ' ')
+            for k in range(1, i + 1):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#31
+# Python Program to Print Same Numbers on all Sides of a Square
+def print_same_numbers_on_all_side_of_square(rows):
+    # max row edge
+    if rows >10:
+        return
+    if type(rows)==int and rows>0:
+        print("====Print Same Numbers on all Sides of a Square Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(1, rows + 1):
+                if i < j:
+                    print(rows - i + 1, end = ' ')
+                else:
+                    print(rows - j + 1, end = ' ')
+            for k in range(rows - 1, 0, - 1):
+                if i < k:
+                    print(rows - i + 1, end = ' ')
+                else:
+                    print(rows - k + 1, end = ' ')
+            print()
+
+        for i in range(rows - 1, 0, -1):
+            for j in range(1, rows + 1):
+                if i < j:
+                    print(rows - i + 1, end = ' ')
+                else:
+                    print(rows - j + 1, end = ' ')
+            for k in range(rows - 1, 0, - 1):
+                if i < k:
+                    print(rows - i + 1, end = ' ')
+                else:
+                    print(rows - k + 1, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#32
+# Python Program to Print Same Numbers in Square Rows and Columns
+def print_same_numbers_in_square_rows_and_colums(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        print("===Printing Same Number in Rows and Columns of a Square Pattern===")
+
+        for i in range(1, rows + 1):
+            for j in range(i, rows + 1):
+                print(j, end = ' ')
+            for k in range(1, i):
+                print(k, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#33
+# Python Program to Print Square With Diagonal Numbers Pattern
+def print_square_with_diagonal_numbers(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Square With Diagonal Numbers and Remaining 0 Pattern====")
+        for i in range(1, rows + 1):
+            for j in range(1, i):
+                print(0, end = ' ')
+            print(i, end = ' ')
+            for k in range(i, rows):
+                print(0, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#34
+# Python Program to Print Inverted Right Triangle of Decreasing Order Numbers
+def print_inverted_right_triangle_of_decreasing_order_numbers(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        print("==Inverted Right Triangle of Numbers in Decreasing Order Pattern==")
+        for i in range(rows, 0, -1):
+            for j in range(i, 0, -1):
+                print(j, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#35
+# Python Program to Print Inverted Right Triangle Numbers in Reverse
+def print_inverted_right_triangle_numbers_in_reverse(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        print("==Inverted Right Triangle of Numbers in Reverse Order Pattern==")
+        for i in range(1, rows + 1):
+            for j in range(rows, i - 1, -1):
+                print(j, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#36
+# Python Program to Print Right Triangle of Numbers in Sine Wave Pattern
+def print_right_triangle_of_numbers_in_sine_wave(rows):
+    # max row edge
+    if rows >11:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Right Triangle of Numbers in Sine Wave Pattern====")
+        for i in range(1, rows + 1):
+            print(i, end = ' ')
+            num = i
+            for j in range(1, i):
+                if j % 2 != 0:
+                    print((num + ((2 * (rows - i + 1)) - 1)), end = ' ')
+                    num = num + (2 * (rows - i + 1) - 1)
+                else:
+                    print(num + 2 * (i - j), end = ' ')
+                    num = num + 2 * (i - j)
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+
+#37
+# Python Program to Print Consecutive Column Numbers in Right Triangle
+def print_consecutive_column_numbers_in_right_triangle(rows):
+    # max row edge
+    if rows >11:
+        return
+    if type(rows)==int and rows>0:
+        print("====Consecutive Column Numbers Right Triangle Pattern====")
+        val = 0
+
+        for i in range(1, rows + 1):
+            for j in range(1, i + 1):
+                val = val + 1
+                print(val, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+
+#38
+# Python Program to Print Consecutive Rows Numbers in Right Triangle
+def print_consecutive_rows_numbers_in_right_triangle(rows):
+    # max row edge
+    if rows >21:
+        return
+    if type(rows)==int and rows>0:
+        print("====Consecutive Row Numbers Right Triangle Pattern====")
+
+        for i in range(1, rows + 1):
+            val = i
+            for j in range(1, i + 1):
+                print(val, end = ' ')
+                val = val + rows - j
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+
+#39
+# Python Program to Print Pyramid Numbers Pattern
+def print_pyramid_numbers(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        print("====The Pyramid of Numbers Pattern====")
+
+        for i in range(1, rows + 1):
+            for j in range(rows, i, -1):
+                print(end = ' ')
+            for k in range(1, i + 1):
+                print(i, end = ' ')
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+
+#40
+#Python Program to Print Floyd’s Triangle
+def print_floyd_triangle(rows):
+    # max row edge
+    if rows >9:
+        return
+    if type(rows)==int and rows>0:
+        number = 1
+
+        print("Floyds Triangle")
+        for i in range(1, rows + 1):
+            for j in range(1, i + 1):
+                print(number, end = '  ')
+                number = number + 1
+            print()
+    elif type(rows) == int and rows <=0:
+        print("take positive number")
+    elif type(rows) == float:
+        print("take positive integer number")
+
+
+
+
+
+#41
+def reverse_number(num):
+    if type(num) == int and num>9:
+        n= num
+        rev=0
+        while(n>0):
+            dig=n%10
+            rev=rev*10+dig
+            n=n//10
+        print("Reverse of the number:",rev)
+    else:
+        print("take positive integer number")
+
+
+
+
+# 42
+# Python Program to Check Leap Year
+def check_leap_year(year):
+    isleap = any([year % 400 == 0, year % 4 == 0 and year % 100 != 0])
+
+    if isleap:
+        print(year, "is a leap year")
+    else:
+        print(year, "is not")
+
+
+
+
+# 43
+# Python Program to find all divisors of an integer
+def findDivisors(num):
+    if type(num) == int and num>1:
+        for i in range(1, num + 1):
+            if num % i == 0:
+                print(i)
+    else:
+        return
+
+
+
+
+# 44
+# Python Program to find Prime Factors of a Number
+def primeFactors(Number:int):
+    if type(Number)==int:
+        for i in range(2, Number + 1):
+            if(Number % i == 0):
+                isprime = 1
+                for j in range(2, (i //2 + 1)):
+                    if(i % j == 0):
+                        isprime = 0
+                        break
+
+                if (isprime == 1):
+                    print(" %d is a Prime Factor of a Given Number %d" %(i, Number))
+
+
+# 45
+# lenht str
+def len_str(_str):
+    _len=0
+    if type(_str) != str:
+        _str = str(_str)
+        _len = len(_str)
+        print(f"{_str}: {_len}")
+    else:
+        _len = len(_str)
+        print(f"{_str} : {_len}")
+
+
+
+#46
+# Upper All Case
+def upper_case(txt):
+    if type(txt)==str:
+        txt2 = txt.upper()
+
+        print("\nOriginal  =  ", txt)
+        print("Result =  ", txt2)
+    else:
+        return
+
+
+#47
+# Count Characters
+def count_character(txt):
+    if type(txt) != str:
+        return "not str"
+    else:
+        total = 0
+
+        for i in txt:
+            total = total + 1
+
+        print("Total Number of Characters in this String = ", total)
+
+
+
+
+#48
+# Python Program to Count Alphabets Digits and Special Characters in a String
+def count_string_characters_and_digits(txt):
+    if type(txt) != str:
+        txt= str(txt)
+    elif type(txt) == str and len(txt)>0:
+        alphabets = digits = special = 0
+
+        for i in range(len(txt)):
+            if(txt[i].isalpha()):
+                alphabets = alphabets + 1
+            elif(txt[i].isdigit()):
+                digits = digits + 1
+            else:
+                special = special + 1
+
+        print("\nTotal Number of Alphabets in this String :  ", alphabets)
+        print("Total Number of Digits in this String :  ", digits)
+        print("Total Number of Special Characters in this String :  ", special)
+
+
+
+
+
+
+# 49
+#Python Program to Reverse String
+def reverse_string(txt):
+    if type(txt) != str:
+        txt= str(txt)
+    elif type(txt) == str and len(txt)>0:
+        rev = txt[::-1]
+
+        print("\n\n-----\n\n")
+        print("Original = ", txt)
+        print("\n\n")
+        print("Reversed =", rev)
+
+
+
+# 50
+# Python Program to check email
+def check_email(txt):
+    if type(txt) != str:
+        return
+
+    import re
+
+    # Make a regular expression
+    # for validating an Email
+    regex = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b"
+
+    # Define a function for
+    # for validating an Email
+    # pass the regular expression
+    # and the string into the fullmatch() method
+    if(re.fullmatch(regex, txt)):
+        print("Valid Email")
+    else:
+        print("Invalid Email")
+
+
+# 51
+# basic md5
+def basic_md5(message):
+    if len(message) <100:
+        print("please add a message")
+    else:
+        message = message.encode("utf-8")
+
+        h0 = 0x67452301
+        h1 = 0xEFCDAB89
+        h2 = 0x98BADCFE
+        h3 = 0x10325476
+
+        message_length = len(message) * 8
+        message += b"\x80"
+
+        while len(message) % 64 != 56:
+            message += b"\x00"
+
+        message += message_length.to_bytes(8, byteorder="little")
+
+        for i in range(0, len(message), 64):
+            chunk = message[i:i+64]
+            a, b, c, d = h0, h1, h2, h3
+
+            for j in range(64):
+                if j < 16:
+                    f = (b & c) | ((~b) & d)
+                    g = j
+                elif j < 32:
+                    f = (d & b) | ((~d) & c)
+                    g = (5 * j + 1) % 16
+                elif j < 48:
+                    f = b ^ c ^ d
+                    g = (3 * j + 5) % 16
+                else:
+                    f = c ^ (b | (~d))
+                    g = (7 * j) % 16
+
+                temp = d
+                d = c
+                c = b
+                b = b + ((a + f + int.from_bytes(chunk[g*4:g*4+4], byteorder="little")) << (j % 4 * 8))
+                a = temp
+
+            h0 = (h0 + a) & 0xFFFFFFFF
+            h1 = (h1 + b) & 0xFFFFFFFF
+            h2 = (h2 + c) & 0xFFFFFFFF
+            h3 = (h3 + d) & 0xFFFFFFFF
+
+        result = (h0 | (h1 << 32) | (h2 << 64) | (h3 << 96)).to_bytes(16, byteorder="little")
+        result = result.hex()
+        print(result)
+
+
+
+
+# 52
+# basic sha256
+def basic_sha256(message):
+    import struct
+
+    if len(message) <100:
+        print("please add a message")
+    else:
+        k = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5, 0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174, 0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da, 0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967, 0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85, 0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070, 0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2]
+
+        message = message.encode("utf-8")
+        message_length = len(message) * 8
+        message += b"\x80"
+        while len(message) % 64 != 56:
+            message += b"\x00"
+
+        message += struct.pack(">Q", message_length)
+
+        h0 = 0x6a09e667
+        h1 = 0xbb67ae85
+        h2 = 0x3c6ef372
+        h3 = 0xa54ff53a
+        h4 = 0x510e527f
+        h5 = 0x9b05688c
+        h6 = 0x1f83d9ab
+        h7 = 0x5be0cd19
+
+        chunks = [message[i:i + 64] for i in range(0, len(message), 64)]
+
+        for chunk in chunks:
+            w = [0] * 64
+
+            for i in range(16):
+                w[i] = struct.unpack(">I", chunk[i * 4:i * 4 + 4])[0]
+
+            for i in range(16, 64):
+                s0 =  (((w[i - 15] >> 7) | (w[i - 15] << (32 - 7))) & 0xFFFFFFFF) ^ (((w[i - 15] >> 18) | (w[i - 15] << (32 - 18))) & 0xFFFFFFFF)  ^ (w[i - 15] >> 3)
+                s1 =  (((w[i - 2] >> 17) | (w[i - 2] << (32 - 17))) & 0xFFFFFFFF) ^ (((w[i - 2] >> 19) | (w[i - 2] << (32 - 19))) & 0xFFFFFFFF)    ^ (w[i - 2] >> 10)
+                w[i] = (w[i - 16] + s0 + w[i - 7] + s1) & 0xFFFFFFFF
+
+            a, b, c, d, e, f, g, h = h0, h1, h2, h3, h4, h5, h6, h7
+
+            for i in range(64):
+                S1 = (((e >> 6) | (e << (32 - 6))) & 0xFFFFFFFF) ^   (((e >> 11) | (e << (32 - 11))) & 0xFFFFFFFF) ^ (((e >> 25) | (e << (32 - 25))) & 0xFFFFFFFF)
+                ch = (e & f) ^ ((~e) & g)
+                temp1 = h + S1 + ch + w[i] + k[i]
+                S0 = (((a >> 2) | (a << (32 - 2))) & 0xFFFFFFFF)  ^ (((a >> 13) | (a << (32 - 13))) & 0xFFFFFFFF)  ^ (((a >> 22) | (a << (32 - 22))) & 0xFFFFFFFF)
+                maj = (a & b) ^ (a & c) ^ (b & c)
+                temp2 = S0 + maj
+
+                h = g
+                g = f
+                f = e
+                e = (d + temp1) & 0xFFFFFFFF
+                d = c
+                c = b
+                b = a
+                a = (temp1 + temp2) & 0xFFFFFFFF
+
+            h0 = (h0 + a) & 0xFFFFFFFF
+            h1 = (h1 + b) & 0xFFFFFFFF
+            h2 = (h2 + c) & 0xFFFFFFFF
+            h3 = (h3 + d) & 0xFFFFFFFF
+            h4 = (h4 + e) & 0xFFFFFFFF
+            h5 = (h5 + f) & 0xFFFFFFFF
+            h6 = (h6 + g) & 0xFFFFFFFF
+            h7 = (h7 + h) & 0xFFFFFFFF
+
+        # Sonucu birleştirin
+        result = struct.pack(">I", h0) + struct.pack(">I", h1) + struct.pack(">I", h2) + struct.pack(">I", h3) + struct.pack(">I", h4) + struct.pack(">I", h5) + struct.pack(">I", h6) + struct.pack(">I", h7)
+
+        result = result.hex()
+        print(result)
+
+
+# 53
+# Count words
+def words_count(_words):
+    if type(_words) == str:
+        words = _words.split(" ")
+        print(f"All words count: {len(words)}")
+        print(f"Unic cords count: {len(set(words))}")
+    else:
+        print("take words")
+
+
+
+#
